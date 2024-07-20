@@ -1,15 +1,9 @@
-# Dependabot configuration:
-# https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
-updates: daily
-  # Maintain dependencies for Gradle dependencies
-  - package-ecosystem: "gradle"
-    directory: "/"
-    schedule: monday-sunday
-      interval: "daily"
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule: monday-sunday
-      interval: "daily"
+updates:
+  - package-ecosystem: "<ecosystem>"  # Replace with your package manager (e.g., "npm", "pip", "cargo")
+    directory: "<directory>"           # Optional: Directory containing dependencies (defaults to project root)
+    # Additional options (refer to Dependabot documentation for details):
+    # - ranges: ...
+    # - schedule: ...
+    # - ignore-dependencies: ...
+    # - labels: ...
