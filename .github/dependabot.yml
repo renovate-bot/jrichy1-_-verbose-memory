@@ -1,9 +1,22 @@
 version: 2
 updates:
-  - package-ecosystem: "<ecosystem>"  # Replace with your package manager (e.g., "npm", "pip", "cargo")
-    directory: "<directory>"           # Optional: Directory containing dependencies (defaults to project root)
-    # Additional options (refer to Dependabot documentation for details):
-    # - ranges: ...
-    # - schedule: ...
-    # - ignore-dependencies: ...
-    # - labels: ...
+  # Update npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily" # Check for updates daily
+  # Update GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of workflow files
+    schedule:
+      interval: "daily" # Check for updates daily
+  # Update Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly" # Check for updates weekly
+  # Update Docker dependencies
+  - package-ecosystem: "docker"
+    directory: "/" # Location of Dockerfile
+    schedule:
+      interval: "weekly" # Check for updates weekly
